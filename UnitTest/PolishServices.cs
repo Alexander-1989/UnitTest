@@ -33,14 +33,14 @@ namespace Project.Service
             {
                 if (IsSing(value))
                 {
-                    double y = buffer.Pop();
-                    double x = buffer.Pop();
+                    double y = buffer.PopBack();
+                    double x = buffer.PopBack();
                     double result = Operation(x, y, value);
-                    buffer.Add(result);
+                    buffer.PushBack(result);
                 }
                 else
                 {
-                    double number = Convert.ToDouble(value);
+                    double.TryParse(value, out double number);
                     buffer.Add(number);
                 }
             }

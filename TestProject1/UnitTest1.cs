@@ -90,5 +90,12 @@ namespace UnitTest
             Counter<char> counter = new Counter<char>("AAAABBBCCD");
             Assert.IsTrue(counter.TryGetValue('A') == 4);
         }
+
+        [Test]
+        public void Test14()
+        {
+            int number = 126;
+            Assert.IsTrue(Utility.IsEven(number), $"{number} should be even");
+        }
     }
 }
